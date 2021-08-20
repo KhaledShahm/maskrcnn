@@ -24,7 +24,7 @@ from model import *
 
 data_path = 'dataset_conversion' # os.path.join(parentdir, 'data')
 sperm_dataset_path = os.path.join(data_path, 'labelme_dataset')
-annotations_file_path = os.path.join(sperm_dataset_path, 'coco_dataset.json')
+annotations_file_path = os.path.join(sperm_dataset_path, 'coco_output.json')
 
 model_path = "model.pth"
 
