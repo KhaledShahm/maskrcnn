@@ -1,9 +1,6 @@
 
 
 
-
-
-
-model_path = 'models/mask_rcnn_model.pth'
+model_path = 'model.pth'
 
 
