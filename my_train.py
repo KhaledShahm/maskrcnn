@@ -55,7 +55,7 @@ def main():
     optimizer = torch.optim.SGD(params, lr = 0.005, momentum = 0.9, weight_decay = 0.0005)
     lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 4, gamma = 0.9)
 
-    num_epochs = 70
+    num_epochs = 50
     print("starting to train")
     for epoch in range(num_epochs):
         train_one_epoch(model, optimizer, train_data_loader, device, epoch, print_freq = 10)
