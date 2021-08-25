@@ -46,6 +46,7 @@ def main():
 
     # our dataset has two classes only - background and sperm
     num_classes = 2
+    
     # model = get_instance_segmentation_model(num_classes = num_classes)
     model = get_model_instance_segmentation(num_classes)
     model.to(device)
