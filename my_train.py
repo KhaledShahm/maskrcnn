@@ -21,9 +21,9 @@ from model import *
 # configs_path = os.path.join(parentdir, 'configs')
 # configs_file_path = os.path.join(configs_path, 'default_config.yml')
 
-data_path = 'dataset_conversion' # os.path.join(parentdir, 'data')
-sperm_dataset_path = os.path.join(data_path, 'labelme_dataset')
-annotations_file_path = os.path.join(sperm_dataset_path, 'coco_output.json')
+data_path = 'dataset_conversion/coco_dataset' # os.path.join(parentdir, 'data')
+sperm_dataset_path = os.path.join(data_path, 'JPEGImages')
+annotations_file_path = os.path.join(sperm_dataset_path, 'annotations.json')
 
 model_path = "model.pth"
 
