@@ -1,6 +1,6 @@
+
 # from instance_segmentation_deprecated.my_utils import get_model_instance_segmentation
 import os
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
 import sys
 # import inspect
 # currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -36,7 +36,7 @@ def main():
 
     # use our dataset and defined transformations
     albumentations_transforms = get_albumentations_transforms()
-    dataset = COCODataset(root_dir = os.path.join(data_path, 'coco_dataset'), \
+    dataset = COCODataset(root_dir = os.path.join(sperm_dataset_path, 'JPEGImages'), \
         coco_path=annotations_file_path, transforms = albumentations_transforms)
 
     train_data_loader = torch.utils.data.DataLoader(
@@ -46,7 +46,6 @@ def main():
 
     # our dataset has two classes only - background and sperm
     num_classes = 2
-    
     # model = get_instance_segmentation_model(num_classes = num_classes)
     model = get_model_instance_segmentation(num_classes)
     model.to(device)
@@ -55,7 +54,7 @@ def main():
     optimizer = torch.optim.SGD(params, lr = 0.005, momentum = 0.9, weight_decay = 0.0005)
     lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 4, gamma = 0.9)
 
-    num_epochs = 50
+    num_epochs = 70
     print("starting to train")
     for epoch in range(num_epochs):
         train_one_epoch(model, optimizer, train_data_loader, device, epoch, print_freq = 10)
