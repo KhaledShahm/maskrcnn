@@ -36,7 +36,7 @@ def main():
 
     # use our dataset and defined transformations
     albumentations_transforms = get_albumentations_transforms()
-    dataset = COCODataset(root_dir = os.path.join(sperm_dataset_path), \
+    dataset = COCODataset(root_dir = os.path.join(data_path, 'coco_dataset'), \
         coco_path=annotations_file_path, transforms = albumentations_transforms)
 
     train_data_loader = torch.utils.data.DataLoader(
