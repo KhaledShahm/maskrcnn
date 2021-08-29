@@ -1,0 +1,8 @@
+MorphologyAnalyzer:
+  morphology_model_path : maskrcnn_mixed.pth
+  # no head size should be less than this value,
+  # to eliminate noise incase the image has no image at all.
+  head_min_size: 1000
+  # no sperm size should be less than this value
+  sperm_min_size: 4000
+  model_inference_threshold : 50
