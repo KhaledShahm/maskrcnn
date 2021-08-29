@@ -21,8 +21,8 @@ from model import *
 # configs_path = os.path.join(parentdir, 'configs')
 # configs_file_path = os.path.join(configs_path, 'default_config.yml')
 
-data_path = 'data' # os.path.join(parentdir, 'data')
-sperm_dataset_path = os.path.join(data_path, 'mixed_coco')
+data_path = 'dataset_conversion' # os.path.join(parentdir, 'data')
+sperm_dataset_path = os.path.join(data_path, 'coco_dataset')
 annotations_file_path = os.path.join(sperm_dataset_path, 'annotations.json')
 
 model_path = "model.pth"
@@ -36,7 +36,7 @@ def main():
 
     # use our dataset and defined transformations
     albumentations_transforms = get_albumentations_transforms()
-    dataset = COCODataset(root_dir = os.path.join(sperm_dataset_path, 'images'), \
+    dataset = COCODataset(root_dir = os.path.join(sperm_dataset_path, 'JPEGImages'), \
         coco_path=annotations_file_path, transforms = albumentations_transforms)
 
     train_data_loader = torch.utils.data.DataLoader(
